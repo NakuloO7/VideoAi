@@ -17,6 +17,7 @@ export async function connectToDatabase() {
         bufferCommands : true,
         maxPoolSize : 10
     }
+    //if already connected
     if(cached.conn){
        return cached.conn
     }
@@ -34,5 +35,6 @@ export async function connectToDatabase() {
         throw error;
     }
 
+    console.log("Mongo connected successfully!")
     return cached.conn;
 }
